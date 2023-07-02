@@ -4,14 +4,3 @@
     padding: 10px;
     border: 1px solid #ccc;
 }
-
-.form__button {
-    width: 100%;
-    background-color: teal;
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    margin: 0px;
-    color: #fff;
-    border: none;
-}
