@@ -29,7 +29,7 @@
             case "✓":
                 tickButtons[index].innerText = "✘";
                 listItem[index].classList.remove("form__taskDone");
-                
+
                 break;
 
             case "✘":
@@ -37,8 +37,6 @@
                 listItem[index].classList.add("form__taskDone");
                 break;
         };
-
-
     }
 
     const buttonFocus = () => {
@@ -46,7 +44,7 @@
         const input = document.querySelector(".js-input");
         button.addEventListener("click", () => {
             input.focus();
-        })
+        });
     }
 
     const onFormSubmit = (event) => {
