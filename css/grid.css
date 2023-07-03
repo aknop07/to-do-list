@@ -74,3 +74,7 @@
     margin: 0px;
     grid-column-start: 0;
 }
+
+.container__unorderedList {
+    padding-left: 0px;
+}
