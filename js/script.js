@@ -10,23 +10,6 @@
         },
     ];
 
-    const removeTask = (index) => {
-        tasks.splice(index, 1);
-        render();
-    }
-
-    const tickTask = (tickButtons, index) => {
-        switch (tickButtons[index].innerText) {
-            case "✓":
-                tickButtons[index].innerText = "✘";
-                break;
-
-            case "✘":
-                tickButtons[index].innerText = "✓";
-                break;
-        };
-    }
-
     const addNewTask = (newTask) => {
         tasks.push(
             {
@@ -34,6 +17,28 @@
             })
 
         render();
+    }
+
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    }
+
+    const tickTask = (tickButtons, listItem, index) => {
+        switch (tickButtons[index].innerText) {
+            case "✓":
+                tickButtons[index].innerText = "✘";
+                listItem[index].classList.remove("form__taskDone");
+                
+                break;
+
+            case "✘":
+                tickButtons[index].innerText = "✓";
+                listItem[index].classList.add("form__taskDone");
+                break;
+        };
+
+
     }
 
     const buttonFocus = () => {
@@ -68,9 +73,7 @@
                         <button class="form__tickButton js-taskDone">✘</button>
                     </div>
                     <div class="form__listItem form__containerItem--listItem">
-                        <li 
-                            ${task.done ? " class=\"form__taskDone\"" : ""}
-                        >
+                        <li class="js-listItem ${task.done ? "form__taskDone" : ""} ">
                         ${task.content}
                         </li>
 
@@ -93,10 +96,11 @@
         });
 
         const tickButtons = document.querySelectorAll(".js-taskDone");
+        const listItem = document.querySelectorAll(".js-listItem");
 
         tickButtons.forEach((tickButton, index) => {
             tickButton.addEventListener("click", () => {
-                tickTask(tickButtons, index);
+                tickTask(tickButtons, listItem, index);
             });
         });
 
