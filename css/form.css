@@ -9,7 +9,6 @@
     text-decoration: line-through;
 }
 
-
 .form__tickButton {
     width: 100%;
     background-color: rgb(34, 138, 34);
@@ -19,7 +18,7 @@
     margin: 0px;
     color: #fff;
     border: none;
-} 
+}
 
 .form__removeButton {
     background-color: rgb(180, 16, 16);
@@ -37,7 +36,7 @@
     grid-template-columns: 1fr 8fr 1fr;
     align-content: space-between;
     align-items: center;
-    padding: 10px; 
+    padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -63,5 +62,3 @@
     padding: 0px 0px;
     justify-self: start;
 }
-
-
