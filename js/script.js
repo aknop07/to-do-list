@@ -10,6 +10,23 @@
         },
     ];
 
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    }
+
+    const tickTask = (tickButtons, index) => {
+        switch (tickButtons[index].innerText) {
+            case "✓":
+                tickButtons[index].innerText = "✘";
+                break;
+
+            case "✘":
+                tickButtons[index].innerText = "✓";
+                break;
+        };
+    }
+
     const addNewTask = (newTask) => {
         tasks.push(
             {
@@ -38,12 +55,6 @@
 
         addNewTask(newTask);
         buttonFocus();
-
-    }
-
-    const removeTask = (index) => {
-        tasks.splice(index, 1);
-        render();
     }
 
     const render = () => {
@@ -54,7 +65,7 @@
                 <div class="form__container">
 
                     <div class="form__add">
-                        <button class="form__tickButton">A</button>
+                        <button class="form__tickButton js-taskDone">✘</button>
                     </div>
                     <div class="form__listItem form__containerItem--listItem">
                         <li 
@@ -65,7 +76,7 @@
 
                     </div>
                     <div class="form__remove">
-                        <button class="form__removeButton js-remove">D</button>
+                        <button class="form__removeButton js-remove">🗑</button>
                     </div>
                 </div>
                 `;
@@ -80,6 +91,15 @@
                 removeTask(index);
             });
         });
+
+        const tickButtons = document.querySelectorAll(".js-taskDone");
+
+        tickButtons.forEach((tickButton, index) => {
+            tickButton.addEventListener("click", () => {
+                tickTask(tickButtons, index);
+            });
+        });
+
     };
 
     const init = () => {
@@ -87,7 +107,6 @@
 
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
-
     };
 
     init();
