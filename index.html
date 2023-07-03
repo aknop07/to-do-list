@@ -21,32 +21,32 @@
     <div class="container">
 
         <div class="container__item container__item--heading">
-            <h1>Lista zadań</h1>
+            <h1>Task list</h1>
         </div>
 
         <div class="container__item">
             <div class="container__itemSmall">
-                <h2 class="container__subHeading">Dodaj nowe zadanie</h2>
+                <h2 class="container__subHeading">Add new task</h2>
             </div>
             <div class="container__form">
                 <div class="container__formInput">
                     <form id="addTask" class="js-form">
                         <input class="form__input js-input" type="text" minlength="3" maxlength="250"
-                            placeholder="Co jest do zrobienia?">
+                            placeholder="Another thing to do">
                     </form>
                 </div>
                 <div class="container__formButton">
-                    <input type="submit" form="addTask" class="form__button" value="Dodaj zadanie"></input>
+                    <input type="submit" form="addTask" class="form__button js-button" value="Add new task"></input>
                 </div>
             </div>
         </div>
 
         <div class="container__item">
             <div class="container__itemSmall">
-                <h2 class="container__subHeading">Lista zadań</h2>
+                <h2 class="container__subHeading">Task list</h2>
             </div>
             <div class="container__itemSmall container__itemSmall--list">
-                <ul class="js-tasks">
+                <ul class="container__unorderedList js-tasks">
                 </ul>
             </div>
         </div>
